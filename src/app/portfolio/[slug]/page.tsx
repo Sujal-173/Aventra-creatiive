@@ -166,45 +166,86 @@ export default async function CaseStudyPage({
                   : { background: project.gradient }
               }
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute left-6 bottom-6">
-              <span className="label-mono text-[var(--primary)]">
-                {project.industry}
-              </span>
-              <h1 className="mt-3 max-w-3xl font-[family-name:var(--font-space-grotesk)] text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                {project.name}
-              </h1>
-              <p className="mt-3 max-w-2xl text-sm sm:text-base text-white/85">
-                {project.overview}
-              </p>
-              <div className="mt-4 flex flex-wrap items-center gap-3">
-                {project.projectUrl && (
-                  <a
-                    href={project.projectUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[var(--primary-deep)]"
-                  >
-                    Visit project <ArrowRight className="h-4 w-4" />
-                  </a>
-                )}
-                <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm text-white/90">
-                  {project.year}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+            <div className="hidden lg:block absolute left-6 bottom-6 max-w-2xl">
+              <div className="rounded-[2rem] bg-black/50 p-8 shadow-[0_40px_120px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+                <span className="label-mono text-[var(--primary)]">
+                  {project.industry}
                 </span>
-                <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm text-white/90">
-                  {project.result}
-                </span>
-              </div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.services.map((service) => (
-                  <span
-                    key={service}
-                    className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-white/85"
-                  >
-                    {service}
+                <h1 className="mt-3 font-[family-name:var(--font-space-grotesk)] text-5xl font-bold text-white">
+                  {project.name}
+                </h1>
+                <p className="mt-3 text-base text-white/85">
+                  {project.overview}
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-3">
+                  {project.projectUrl && (
+                    <a
+                      href={project.projectUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[var(--primary-deep)]"
+                    >
+                      Visit project <ArrowRight className="h-4 w-4" />
+                    </a>
+                  )}
+                  <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm text-white/90">
+                    {project.year}
                   </span>
-                ))}
+                  <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm text-white/90">
+                    {project.result}
+                  </span>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.services.map((service) => (
+                    <span
+                      key={service}
+                      className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-white/85"
+                    >
+                      {service}
+                    </span>
+                  ))}
+                </div>
               </div>
+            </div>
+          </div>
+          <div className="mt-6 rounded-[2rem] bg-[var(--surface)] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.1)] lg:hidden">
+            <span className="label-mono text-[var(--primary)]">
+              {project.industry}
+            </span>
+            <h1 className="mt-3 font-[family-name:var(--font-space-grotesk)] text-2xl font-bold text-[var(--ink)]">
+              {project.name}
+            </h1>
+            <p className="mt-3 text-sm text-[var(--ink-muted)]">
+              {project.overview}
+            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              {project.projectUrl && (
+                <a
+                  href={project.projectUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[var(--primary-deep)]"
+                >
+                  Visit project <ArrowRight className="h-4 w-4" />
+                </a>
+              )}
+              <span className="rounded-full border border-[var(--line)] bg-[var(--surface)] px-3 py-1 text-sm text-[var(--ink)]">
+                {project.year}
+              </span>
+              <span className="rounded-full border border-[var(--line)] bg-[var(--surface)] px-3 py-1 text-sm text-[var(--ink)]">
+                {project.result}
+              </span>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {project.services.map((service) => (
+                <span
+                  key={service}
+                  className="rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] px-3 py-1 text-xs uppercase tracking-[0.24em] text-[var(--ink-muted)]"
+                >
+                  {service}
+                </span>
+              ))}
             </div>
           </div>
         </div>
