@@ -31,9 +31,9 @@ export default async function BlogPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Insights"
-        title="Our Blog"
-        description="Tips, insights and strategies to grow your business."
+        eyebrow="Our Blog"
+        title="Insights, Tips & Strategies."
+        description="Stay updated with the latest trends, tips, and insights on web design, development, and SEO."
         crumbs={[{ name: "Home", href: "/" }, { name: "Blog" }]}
       />
 
@@ -76,40 +76,40 @@ export default async function BlogPage() {
       </section>
 
       <section className="bg-[var(--bg)] pb-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <div className="flex flex-col gap-4">
             {rest.map((p) => (
               <Link
                 key={p.slug}
                 href={`/blog/${p.slug}`}
-                className="group block"
+                className="card group flex items-center gap-5 p-4 transition-all hover:-translate-y-0.5 hover:border-[var(--primary)]/30"
               >
-                <div className="aspect-[16/10] overflow-hidden rounded-2xl">
-                  <div
-                    className="h-full w-full transition-transform duration-500 group-hover:scale-105"
-                    style={{ background: p.gradient }}
-                  />
-                </div>
-                <span className="label-mono mt-4 block text-[var(--primary)]">
-                  {p.category}
-                </span>
-                <h3 className="mt-1.5 font-[family-name:var(--font-space-grotesk)] text-lg font-semibold text-[var(--ink)] transition-colors group-hover:text-[var(--primary)]">
-                  {p.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--ink-muted)]">
-                  {p.excerpt}
-                </p>
-                <div className="mt-4 flex items-center gap-3 text-xs text-[var(--ink-muted)]">
-                  <span>
-                    {new Date(p.date).toLocaleDateString("en-IN", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
+                <div
+                  className="h-16 w-16 shrink-0 overflow-hidden rounded-xl transition-transform duration-500 group-hover:scale-105"
+                  style={{ background: p.gradient }}
+                />
+                <div className="min-w-0 flex-1">
+                  <span className="label-mono text-[var(--primary)]">
+                    {p.category}
                   </span>
-                  <span>·</span>
-                  <span>{p.readTime}</span>
+                  <h3 className="mt-1 truncate font-[family-name:var(--font-space-grotesk)] text-base font-semibold text-[var(--ink)] transition-colors group-hover:text-[var(--primary)]">
+                    {p.title}
+                  </h3>
+                  <div className="mt-1 flex items-center gap-2 text-xs text-[var(--ink-faint)]">
+                    <span>
+                      {new Date(p.date).toLocaleDateString("en-IN", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </span>
+                    <span>·</span>
+                    <span>{p.readTime}</span>
+                  </div>
                 </div>
+                <span className="hidden shrink-0 text-sm font-semibold text-[var(--primary)] sm:block">
+                  Read More →
+                </span>
               </Link>
             ))}
           </div>
