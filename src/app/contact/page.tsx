@@ -59,9 +59,9 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Get in touch"
-        title="Start your next digital growth project."
-        description="Share your goals and we’ll recommend the best website, SEO, or brand solution to move your business forward."
+        eyebrow="Contact"
+        title="Let's Build Something Amazing Together."
+        description="Have a project in mind? Let's discuss how we can help your business grow."
         crumbs={[{ name: "Home", href: "/" }, { name: "Contact" }]}
       />
 
@@ -83,7 +83,7 @@ export default function ContactPage() {
                 href={c.href}
                 target={c.href.startsWith("http") ? "_blank" : undefined}
                 rel={c.href.startsWith("http") ? "noreferrer" : undefined}
-                className="flex items-start gap-4 rounded-[1.35rem] border border-[var(--line)] bg-[var(--bg-elevated)] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--primary)]/30 hover:shadow-[0_12px_35px_rgba(91,33,231,0.06)]"
+                className="flex items-start gap-4 rounded-[1.35rem] border border-[var(--line)] bg-[var(--bg-elevated)] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--primary)]/30 hover:shadow-[0_12px_35px_rgba(67,56,202,0.08)]"
               >
                 <span
                   className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl"
@@ -138,7 +138,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right column */}
-          <div className="rounded-[1.6rem] border border-[var(--line)] bg-[var(--bg-elevated)] p-8 shadow-[0_20px_60px_rgba(91,33,231,0.06)]">
+          <div className="rounded-[1.6rem] border border-[var(--line)] bg-[var(--bg-elevated)] p-8 shadow-[0_20px_60px_rgba(67,56,202,0.08)]">
             <ContactForm />
           </div>
         </div>
