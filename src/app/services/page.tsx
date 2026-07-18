@@ -35,9 +35,9 @@ export default async function ServicesPage() {
   return (
     <>
       <PageHeader
-        eyebrow="What we do"
-        title="Our Services"
-        description="Powerful digital solutions to grow your business online."
+        eyebrow="Our Services"
+        title="Digital Services That Drive Your Business Forward."
+        description="We offer end-to-end digital services to help your brand stand out, grow faster, and achieve real results."
         crumbs={[{ name: "Home", href: "/" }, { name: "Services" }]}
       />
 
@@ -50,7 +50,7 @@ export default async function ServicesPage() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="group flex flex-col rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-7 transition-all duration-300 hover:border-[var(--primary)]/30 hover:bg-[var(--bg-elevated)] hover:shadow-[0_12px_30px_rgba(91,33,231,0.04)]"
+                  className="card group flex flex-col p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/30 hover:shadow-[0_12px_30px_rgba(67,56,202,0.08)]"
                 >
                   <div className="flex items-start justify-between">
                     <div
@@ -85,9 +85,9 @@ export default async function ServicesPage() {
       </section>
 
       <PageCta
-        title="Ready to launch a high-impact solution?"
-        description="Tell us your goals and we’ll recommend the best website, SEO, or brand path to grow your business."
-        buttonText="Book a consultation"
+        title="Have a Project in Mind?"
+        description="Let's create something extraordinary together."
+        buttonText="Start a Project"
       />
     </>
   );
